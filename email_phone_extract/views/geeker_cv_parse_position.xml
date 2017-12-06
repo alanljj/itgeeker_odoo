@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- res.partner.form inherit from geeker_partner -->
+        <record model="ir.ui.view" id="geeker_cv_parse_inherit_view_form">
+            <field name="name">geeker_cv_parse.inherit.geeker.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="geeker_partner.geeker_partner_inherit_view_form" />
+            <field name="arch" type="xml">
+                <field name="cv" position="before">
+                    <field name="duplicated_bol" invisible="1"/>
+                    <div style="font-size: 14px; color: red; font-weight: 800;" attrs="{'invisible': [('duplicated_bol','=', False)]}">
+                        <img src="https://pic.geekerconsulting.com/uploads/big/4095e43dc5334c0d9effc2263a7effd9.png" style="float:left; margin-right: 10px;"/>
+                        Found duplicate partner: <field name="duplicated_name" class="oe_inline" style="font-size: 16px; color: blue; vertical-align:baseline; margin-left: 10px;" readonly="1"/> in the pool, please open following link to modify!<br/>
+                        <field name="duplicated_url" widget="url" readonly="1" class="oe_inline" style="font-size: 12px; align: center;"/>
+                    </div>
+                    <button name="import_docx" string="Import Resume" type="object" class="oe_highlight" icon="gtk-stop"/>
+                    <field name="cv_upload"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

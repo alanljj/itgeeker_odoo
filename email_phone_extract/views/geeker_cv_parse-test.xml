@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- res.partner.form inherit from geeker_partner -->
+        <record model="ir.ui.view" id="geeker_cv_parse_inherit_view_form">
+            <field name="name">geeker_cv_parse.inherit.geeker.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="geeker_partner.geeker_partner_inherit_view_form" />
+            <field name="arch" type="xml">
+                <field name="cv" position="before">
+                    <div>
+                        <span class="oe_red"><label for="duplicated_url" string="Duplicated Partner:"/>
+                        <field name="duplicated_url" class="oe_inline"/></span>
+                    </div>
+                    <!-- <field name="duplicated_url" widget="url" readonly="1"/> -->
+                    <field name="duplicated_bol" invisible="1"/>
+                    <button string="We have a duplicated partner in the pool, please open above link to modify!" type="object" class="oe_highlight" icon="gtk-stop" attrs="{'invisible': [('duplicated_bol','=', False)]}"/>
+                    <button name="popup" string="Popup Windows" type="object" class="oe_highlight" icon="gtk-network"/>
+                    <button name="popup_notify" string="Popup Notification" type="object" class="oe_highlight" icon="gtk-ok"/>
+                    <button name="action_open_duplicated" string="Open Duplicated Partner" type="object" class="oe_highlight" icon="gtk-ok"/>
+
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

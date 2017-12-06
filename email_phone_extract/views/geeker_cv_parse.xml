@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- res.partner.form inherit from geeker_partner -->
+        <record model="ir.ui.view" id="geeker_cv_parse_inherit_view_form">
+            <field name="name">geeker_cv_parse.inherit.geeker.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="geeker_partner.geeker_partner_inherit_view_form" />
+            <field name="arch" type="xml">
+                <!-- <field name="cv" position="before"> -->
+                <xpath expr="//notebook" position="before">
+
+                    <field name="duplicated_bol" invisible="1"/>
+                    <div style="font-size: 14px; color: red; font-weight: 800;" attrs="{'invisible': ['|', ('duplicated_bol','=', False), ('duplicated_url','=', False)]}">
+                        <img src="/geeker_cv_parse/static/image/warning_duplicate_50x79.png" style="float:left; margin-right: 10px;"/>
+                        Found duplicate partner: <field name="duplicated_name" class="oe_inline" style="font-size: 16px; color: blue; vertical-align:baseline; margin-left: 10px;" readonly="1"/> in the pool, please open following link to modify!<br/>
+                        <field name="duplicated_url" widget="url" readonly="1" class="oe_inline" style="font-size: 12px; align: center;"/>
+                    </div>
+                    <button name="open_duplicated_partner" string="Open Duplicated Partner" type="object" class="oe_highlight" icon="gtk-ok"/>
+                    <button name="import_docx" string="Import Resume" type="object" class="oe_highlight" icon="gtk-stop"/>
+                    <field name="cv_upload"/>
+
+
+<!--                     <a t-att-onclick="/web?&amp;debug=#id={{ record.duplicated_url.value }}">Test link du partner</a>
+
+                    <a href="#" onclick="window.open('/web#duplicated_url='+$("[data-field='duplicated_url']").text(), '_blank')" class="applicant_docs_forms">duplicat url</a>
+
+                    inspite of using "oe_form_char_content" in jquery selector why don't you try putting some "data-" attribute to your field and use this as selector, like:
+
+                    href="#" onclick="window.open('/web#id='+$("input[data-field='id']").text()+'&amp;view_type=form&amp;model='+$("input[data-field='model']").text(), '_blank')" class="applicant_docs_forms">Link to location</a>
+
+
+                    <a href="#" onclick="window.open('/web#id='+$('.oe_form_char_content').eq(3).text()+'&amp;view_type=form&amp;model='+$('.oe_form_char_content').eq(2).text(), '_blank')" class="applicant_docs_forms">Link to location</a> -->
+                <!-- </field> -->
+                </xpath>
+            </field>
+        </record>
+
+        <!-- solve payable and receiveable problem -->
+        <record id="view_partner_property_form_required_false" model="ir.ui.view">
+            <field name="name">res.partner.property.form.inherit.set.required.false</field>
+            <field name="model">res.partner</field>
+            <!-- <field name="priority">2</field> -->
+            <field name="inherit_id" ref="account.view_partner_property_form"/>
+            <!-- <field name="groups_id" eval="[(4, ref('account.group_account_invoice'))]"/> -->
+            <field name="arch" type="xml">
+                <field name="property_account_payable" position="attributes">
+                    <attribute name='required'>0</attribute>
+                </field>
+                <field name="property_account_receivable" position="attributes">
+                    <attribute name='required'>0</attribute>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>
