@@ -1,32 +1,26 @@
 # -*- coding: utf-8 -*-
 ###########################################################################
 #    GeekerMaster奇客大师 www.geekermaster.com
-#    Copyright 2017 ITGeeker <alanljj@gmail.com>
+#    Copyright 2018 ITGeeker <alanljj@gmail.com>
 ###########################################################################
 {
-    "name": "Auto fill Email and Phone",
+    "name": "Auto fill Email and Mobile",
     "version": "8.0.1.0.0",
     "author": "ITGeeker",
     "website": "http://www.itgeeker.net",
     "images": ["static/description/icon.png"],
     "category": "ITGeeker",
-    "price": 49.99,
+    "price": 29.99,
     "currency": "EUR",
-    "summary": "CV contact extract and parse",
+    "summary": "Auto extract mobile and email from customer Internal Notes",
     "description": '''
-    remove html style\n
+    After you past your client or contact's email signatue which includes mobile and email, these information will automatically fill to their place.\n
     ''',
     "depends": [
-        "base",
-        # "html_image_url_extractor",
-        "html_text",
-        "geeker_crm_tracking_source",
-        "geeker_industry",
-        "geeker_partner",
-        # "popup_message",
+                    "base",
     ],
     "data": [
-        "views/geeker_cv_parse.xml",
+                    "views/email_mobile_extract.xml",
     ],
     "demo": [],
     "test": [],
