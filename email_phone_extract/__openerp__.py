@@ -5,7 +5,7 @@
 ###########################################################################
 {
     "name": "Auto fill Email and Mobile",
-    "version": "8.0.1.0.0",
+    "version": "8.0.1.0.1",
     "author": "ITGeeker",
     "website": "http://www.itgeeker.net",
     "images": ["static/description/icon.png"],
