@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		<template id="assets_backend_geeker_list_highlighted" inherit_id="web.assets_backend" name="Tree list highlighted">
+    		<xpath expr="." position="inside">
+		        <link rel="stylesheet" href="/geeker_list_highlighted/static/src/css/list_highlighted.css"/>
+		    </xpath>
+		</template>
+
+     </data>
+</openerp>

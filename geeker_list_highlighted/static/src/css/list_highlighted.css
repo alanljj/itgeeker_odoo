@@ -1,0 +1,5 @@
+@charset "UTF-8";
+/*  odoo list view table tr hover background color   */
+.oe_list_content>tbody>tr:hover>td {
+    background-color: #F2C6CF;
+}
