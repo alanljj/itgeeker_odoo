@@ -7,6 +7,8 @@
     'name': 'Tree list highlighted',
     'version': '8.0.1.0.0',
     'category': 'ITGeeker',
+    "price": 1.99,
+    "currency": "EUR",
     'summary': 'odoo list view table tr hover background color',
     'author': 'ITGeeker',
     'website': 'https://www.itgeeker.net',
