@@ -1,5 +1,8 @@
 # itgeeker_odoo
 
-customize odoo addons
+odoo addons by Geeker
 
-https://www.itgeeker.net
+###########################################################################
+#    GeekerMaster奇客大师 https://www.geekermaster.com
+#    Copyright 2019 ITGeeker <alanljj@gmail.com> https://www.itgeeker.net
+###########################################################################
